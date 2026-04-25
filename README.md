@@ -1,4 +1,4 @@
-# 🚀 Portofolio V1 - Electric Neon Aesthetic
+# 🚀 Portofolio V1
 
 Selamat datang di repositori **Portofolio V1**. Ini adalah website portofolio pribadi modern yang dibangun dengan **React + Vite**, mengusung desain futuristik dengan skema warna _Electric Violet_ dan _Lime Neon_. Website ini sudah sepenuhnya responsif dan dilengkapi dengan fitur interaktif.
 
