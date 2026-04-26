@@ -381,6 +381,7 @@ body::after{content:'';position:fixed;top:0;left:0;width:3px;height:var(--scroll
 @media(max-width:900px){
   nav{padding:12px 20px}
   .nav-logo{font-size:1.1rem}
+  .nav-links, .nav-cta { display: none }
   .hamburger{display:flex}
   .hero{flex-direction:column;padding:60px 20px 30px;text-align:center;gap:30px}
   .hero-visual{order:-1}
