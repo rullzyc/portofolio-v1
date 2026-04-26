@@ -116,7 +116,7 @@ nav.scrolled{background:rgba(6,6,15,0.85);backdrop-filter:blur(24px);border-bott
 
 .hero-title{font-size:clamp(2.8rem,5.5vw,5rem);font-weight:700;line-height:1.08;margin-bottom:22px}
 .hero-title .glitch-name{position:relative;color:var(--text);display:inline-block;animation:glitch 3s infinite 2s}
-.typed-wrapper{display:flex;align-items:center;gap:4px;min-height:1.2em}
+.typed-wrapper{display:inline-flex;align-items:center;justify-content:center;gap:4px;min-height:1.2em}
 .typed-text{font-family:'Fira Code',monospace;font-size:.65em;color:var(--lime)}
 .typed-cursor{color:var(--lime);font-size:.65em;animation:blink 1s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
