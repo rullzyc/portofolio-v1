@@ -379,18 +379,59 @@ body::after{content:'';position:fixed;top:0;left:0;width:3px;height:var(--scroll
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  nav{padding:16px 24px}
-  .nav-links,.nav-cta{display:none}
+  nav{padding:12px 20px}
+  .nav-logo{font-size:1.1rem}
   .hamburger{display:flex}
-  .hero{flex-direction:column;padding:100px 24px 60px;text-align:center}
+  .hero{flex-direction:column;padding:60px 20px 30px;text-align:center;gap:30px}
   .hero-visual{order:-1}
-  .avatar-container{width:250px;height:250px}
-  .avatar-img{width:160px;height:160px}
-  .hero-stats,.hero-actions{justify-content:center}
-  .about-grid{grid-template-columns:1fr}
+  .avatar-container{width:180px;height:180px}
+  .avatar-img{width:110px;height:110px}
+  .hero-title{font-size:2.2rem;line-height:1.1}
+  .hero-desc{font-size:0.9rem;margin-bottom:20px;line-height:1.6}
+  .hero-stats{gap:16px}
+  .stat-num{font-size:1.6rem}
+  .stat-label{font-size:0.6rem}
+  
+  /* Super Compact Sections */
+  .about,.skills,.projects,.contact{padding:40px 0}
+  .section-header{margin-bottom:24px}
+  .section-tag{font-size:0.7rem;margin-bottom:8px}
+  .section-title{font-size:1.8rem}
+
+  /* Compact Grids */
+  .about-grid,.skills-grid,.projects-grid{grid-template-columns:1fr;gap:12px}
   .card-main,.card-quote{grid-column:span 1}
-  .skills-grid,.projects-grid{grid-template-columns:1fr}
+  
+  /* Super Compact Project Cards */
   .project-card.featured{grid-column:span 1}
-  .contact-grid-ekizr{grid-template-columns:1fr;gap:24px}
-  .ek-card{padding:24px}
+  .project-img{height:140px}
+  .project-img.has-image{padding:12px 12px 0 12px}
+  .project-info{padding:14px}
+  .project-title{font-size:0.9rem;margin-bottom:4px}
+  .project-desc{
+    font-size:0.78rem;
+    line-height:1.4;
+    margin-bottom:10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .project-tags{gap:4px;margin-bottom:8px}
+  .p-tag{padding:2px 6px;font-size:0.6rem}
+  .project-links{gap:12px}
+  .p-link{font-size:0.78rem}
+  
+  /* Compact About & Skills Cards */
+  .about-card,.skill-category,.ek-card{padding:16px}
+  .about-card h3{font-size:0.9rem}
+  .about-card p{font-size:0.82rem}
+  .skill-cat-title{margin-bottom:12px;font-size:0.65rem}
+  .skill-items{gap:10px}
+  .skill-icon{font-size:1.2rem}
+  .skill-name{font-size:0.8rem;margin-bottom:4px}
+
+  .contact-grid-ekizr{grid-template-columns:1fr;gap:16px}
+  .ek-card-title{font-size:1.5rem}
+  .ek-card-desc{font-size:0.85rem;margin-bottom:20px}
 }

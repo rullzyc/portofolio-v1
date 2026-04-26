@@ -86,7 +86,7 @@ export default function Hero() {
           </span>
         </h1>
         <p className="hero-desc">
-          Saya berfokus pada penciptaan <strong>pengalaman digital</strong> yang menarik dan selalu berupaya memberikan <strong>solusi terbaik</strong> dalam setiap proyek.
+          Saya seorang web developer pemula yang fokus pada <strong>pengembangan website</strong> dan terus belajar untuk meningkatkan kemampuan saya. Saya senang <strong>mencoba hal baru</strong> dan membangun proyek sebagai sarana belajar dan berkembang.
         </p>
         <div className="hero-actions">
           <a href="#projects" className="btn btn-primary">
