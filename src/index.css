@@ -102,10 +102,10 @@ nav.scrolled{background:rgba(6,6,15,0.85);backdrop-filter:blur(24px);border-bott
 /* GLOBAL BACKGROUND */
 .global-bg{position:fixed;inset:0;z-index:-1;pointer-events:none}
 .grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(120,87,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(120,87,255,.04) 1px,transparent 1px);background-size:60px 60px}
-.glow{position:absolute;border-radius:50%;filter:blur(120px);opacity:.12}
-.glow-1{width:700px;height:700px;background:var(--violet);top:-200px;right:-150px;animation:glowPulse 6s ease-in-out infinite}
-.glow-2{width:500px;height:500px;background:var(--lime);bottom:-100px;left:-100px;animation:glowPulse 6s ease-in-out infinite 3s}
-.glow-3{width:300px;height:300px;background:var(--coral);top:40%;left:40%;animation:glowPulse 8s ease-in-out infinite 1.5s}
+.glow{position:absolute;border-radius:50%;opacity:.12;will-change:transform}
+.glow-1{width:700px;height:700px;background:radial-gradient(circle, var(--violet) 0%, transparent 60%);top:-200px;right:-150px;animation:glowPulse 6s ease-in-out infinite}
+.glow-2{width:500px;height:500px;background:radial-gradient(circle, var(--lime) 0%, transparent 60%);bottom:-100px;left:-100px;animation:glowPulse 6s ease-in-out infinite 3s}
+.glow-3{width:300px;height:300px;background:radial-gradient(circle, var(--coral) 0%, transparent 60%);top:40%;left:40%;animation:glowPulse 8s ease-in-out infinite 1.5s}
 @keyframes glowPulse{0%,100%{opacity:.1;transform:scale(1)}50%{opacity:.18;transform:scale(1.1)}}
 
 .hero-content{position:relative;z-index:2;flex:1;max-width:620px}
@@ -435,4 +435,14 @@ body::after{content:'';position:fixed;top:0;left:0;width:3px;height:var(--scroll
   .contact-grid-ekizr{grid-template-columns:1fr;gap:16px}
   .ek-card-title{font-size:1.5rem}
   .ek-card-desc{font-size:0.85rem;margin-bottom:20px}
+  
+  /* Performance optimizations for mobile */
+  .noise { display: none; }
+  .glow { display: none; }
+  .avatar-img { animation: none; box-shadow: 0 0 0 8px rgba(120,87,255,.08); }
+  .ring-1, .ring-2, .ring-3 { animation: none; display: none; }
+  .tech-badge { animation: none; }
+  .project-card:hover { transform: none; box-shadow: none; border-color: var(--border); }
+  .about-card:hover { transform: none; box-shadow: none; border-color: var(--border); }
+  .skill-category:hover { box-shadow: none; border-color: var(--border); }
 }

@@ -25,14 +25,22 @@ const Visual = ({ type, cls }) => {
 
 function TiltCard({ children, className, 'data-reveal': dr, 'data-delay': dd }) {
   const ref = useRef(null)
+  const rafRef = useRef(null)
   const onMove = (e) => {
+    if (window.innerWidth < 900) return
     const el = ref.current; if (!el) return
     const r = el.getBoundingClientRect()
     const x = (e.clientX - r.left) / r.width - 0.5
     const y = (e.clientY - r.top) / r.height - 0.5
-    el.style.transform = `perspective(900px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) scale3d(1.02,1.02,1.02)`
+    if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    rafRef.current = requestAnimationFrame(() => {
+      el.style.transform = `perspective(900px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) scale3d(1.02,1.02,1.02)`
+    })
   }
-  const onLeave = () => { if (ref.current) ref.current.style.transform = '' }
+  const onLeave = () => { 
+    if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    if (ref.current) ref.current.style.transform = '' 
+  }
 
   return (
     <div

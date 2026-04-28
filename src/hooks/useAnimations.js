@@ -22,7 +22,9 @@ export function useTilt(ref) {
   useEffect(() => {
     const el = ref.current
     if (!el) return
+    let rafId = null
     const onMove = (e) => {
+      if (window.innerWidth < 900) return
       const rect = el.getBoundingClientRect()
       const x = e.clientX - rect.left
       const y = e.clientY - rect.top
@@ -30,9 +32,15 @@ export function useTilt(ref) {
       const cy = rect.height / 2
       const rotX = ((y - cy) / cy) * -8
       const rotY = ((x - cx) / cx) * 8
-      el.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.02,1.02,1.02)`
+      if (rafId) cancelAnimationFrame(rafId)
+      rafId = requestAnimationFrame(() => {
+        el.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.02,1.02,1.02)`
+      })
     }
-    const onLeave = () => { el.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale3d(1,1,1)' }
+    const onLeave = () => { 
+      if (rafId) cancelAnimationFrame(rafId)
+      el.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale3d(1,1,1)' 
+    }
     el.addEventListener('mousemove', onMove)
     el.addEventListener('mouseleave', onLeave)
     return () => { el.removeEventListener('mousemove', onMove); el.removeEventListener('mouseleave', onLeave) }

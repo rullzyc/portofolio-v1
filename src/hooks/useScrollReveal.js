@@ -22,12 +22,15 @@ export function useScrollReveal(staggerMs = 100) {
     }
 
     const hide = () => {
-      items.forEach(el => el.classList.remove('is-visible'))
+      // Disabled hide to prevent layout thrashing and frame drops on scroll
+      // items.forEach(el => el.classList.remove('is-visible'))
     }
 
     const obs = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         show()
+        // Stop observing after revealing to save performance
+        obs.unobserve(section)
       } else {
         hide()
       }
